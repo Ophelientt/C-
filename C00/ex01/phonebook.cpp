@@ -10,7 +10,12 @@ PhoneBook::PhoneBook()
 	nb_contact = 0;
 	index = 0;
 }
-
+static	std::string	cutcolumn(const std::string &text)
+{
+	if (text.length() > 10)
+		return (text.substr(0, 9) + ".");
+	return (text);
+}
 void	PhoneBook::add_contact()
 {
 	std::string	first_tmp;
@@ -53,5 +58,21 @@ void	PhoneBook::add_contact()
 
 void	PhoneBook::search_contact()
 {
+	if (nb_contact == 0)
+	{
+		std::cout << "No contact" << std::endl;
+		return ;
+	}
+	std::cout << std::right << std::setw(10) << "index" << "|"
+							<< std::setw(10) << "first name" << "|"
+							<< std::setw(10) << "last name" << "|"
+							<< std::setw(10) << "nickname" << "|"
 
+	while (index < nb_contact)
+	{
+		first_name = contacts[index].get_first_name();
+		last_name = contacts[index].get_last_name();
+		nickname = contacts[index].get_nickname();
+		
+	}
 }
