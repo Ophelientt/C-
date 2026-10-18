@@ -58,6 +58,12 @@ void	PhoneBook::add_contact()
 
 void	PhoneBook::search_contact()
 {
+	std::string	first;
+	std::string	last;
+	std::string	nickname;
+	int	index;
+	
+	index = 0;
 	if (nb_contact == 0)
 	{
 		std::cout << "No contact" << std::endl;
@@ -67,12 +73,18 @@ void	PhoneBook::search_contact()
 							<< std::setw(10) << "first name" << "|"
 							<< std::setw(10) << "last name" << "|"
 							<< std::setw(10) << "nickname" << "|"
+				<< std::endl;
 
 	while (index < nb_contact)
 	{
-		first_name = contacts[index].get_first_name();
-		last_name = contacts[index].get_last_name();
+		first = contacts[index].get_first_name();
+		last = contacts[index].get_last_name();
 		nickname = contacts[index].get_nickname();
-		
+		std::cout << std::right << std::setw(10) << index << "|"
+								<< std::setw(10) << cutcolumn(first) << "|"
+								<< std::setw(10) << cutcolumn(last) << "|"
+								<< std::setw(10) << cutcolumn(nickname) << "|"
+				<< std::endl;
+		index++;
 	}
 }
