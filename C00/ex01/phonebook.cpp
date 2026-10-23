@@ -87,4 +87,26 @@ void	PhoneBook::search_contact()
 				<< std::endl;
 		index++;
 	}
+	while (true)
+	{
+		std::string	valid_index;
+		std::cout << "Enter a valid index" << std::endl;
+		if (!std::getline(std::cin, valid_index))
+		{	
+			std::cout << "Index is not valid" << std::endl;	
+			return ;
+		}
+		if (valid_index.length() == 1 && std::isdigit(valid_index[0]))
+			index = valid_index[0] - '0';
+		if (index > nb_contact)
+		{
+			std::cout << "Index is not valid" << std::endl;
+			return ;
+		}
+		std::cout << contacts[index].get_first_name() << std::endl;
+		std::cout << contacts[index].get_last_name() << std::endl;
+		std::cout << contacts[index].get_nickname() << std::endl;
+		std::cout << contacts[index].get_phone_number() << std::endl;
+		std::cout << contacts[index].get_darkest_secret() << std::endl;
+	}
 }
