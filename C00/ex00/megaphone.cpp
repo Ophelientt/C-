@@ -19,7 +19,7 @@ int main (int ac, char **av)
 
 	i = 1;
 	j = 0;
-	if (av[0] && ac == 1)
+	if (ac == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	}
@@ -35,6 +35,7 @@ int main (int ac, char **av)
 			j = 0;
 			i++;
 		}
+		std::cout << std::endl;
 	}
 }
 
