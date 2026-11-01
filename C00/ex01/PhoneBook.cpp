@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: onotteau <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/25 18:35:35 by onotteau          #+#    #+#             */
+/*   Updated: 2025/10/25 18:45:48 by onotteau         ###   ####lausanne.ch   */
+/*                                                                            */
+/* ************************************************************************** */
 #include "phonebook.hpp"
 #include "contact.hpp"
 #include <iostream>
@@ -27,34 +38,29 @@ void	PhoneBook::add_contact()
 	while (first_tmp == "")
 	{
 		std::cout<<"Enter first name"<<std::endl;
-		//std::getline(std::cin, first_tmp);
 		if (!std::getline(std::cin, first_tmp))
 			return ;
 	}
 	while (last_tmp == "")
 	{
 		std::cout<<"Enter last name"<<std::endl;
-		//std::getline(std::cin, last_tmp);
 		if (!std::getline(std::cin, last_tmp))
 			return ;
 	}
 	while (nick_tmp == "")
 	{
 		std::cout<<"Enter nickname"<<std::endl;
-		//std::getline(std::cin, nick_tmp);
 		if (!std::getline(std::cin, nick_tmp))
 			return ;
 	}
 	while (phone_tmp == "")
 	{	std::cout<<"Enter phone number"<<std::endl;
-		//std::getline(std::cin, phone_tmp);
 		if (!std::getline(std::cin, phone_tmp))
 			return ;
 	}
 	while (dark_tmp == "")
 	{
 		std::cout<<"Enter darkest secret"<<std::endl;
-		//std::getline(std::cin, dark_tmp);
 		if (!std::getline(std::cin, dark_tmp))
 			return ;
 	}
